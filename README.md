@@ -1,1 +1,1 @@
-# Mini-project
+This is  Real Time Project named "Coffee Shop Website" developed using HTML,CSS and JAVASCRIPT where Customers having chance to order the coffee through online at their desired timings and tables. The overall agenda is to improve the customer satisfaction from online booking of Coffees.
