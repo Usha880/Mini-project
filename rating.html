@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url("https://cdn.wallpapersafari.com/99/44/vV159M.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .rating-container {
+      margin-top: 50px;
+    }
+
+    .rating-item {
+      display: inline-block;
+      font-size: 36px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .rating-item:hover {
+      transform: scale(1.2);
+    }
+
+    .rating-item.selected {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Your header content goes here -->
+    <div class="second-header">
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item">
+            <a href="index.html" class="logo menu-nav__link">
+              <img src="../img/favicon.png" />
+              <span class="logo-first"></span>
+              <span class="logo-last"></span>
+            </a>
+          </li>
+          <br />
+          <li class="menu-nav__item active">
+            <a href="index.html" class="menu-nav__link"> Home </a>
+          <li>
+            <a href="rating.html" class="menu-nav__link"> Rating </a>
+          </li>
+          <li>
+            <a href="logout.html" class="menu-nav__link"> Logout </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- For example: -->
+    <h1>Our Cafe Feedback</h1>
+    <p>Welcome to our cafe! Please provide your feedback below:</p>
+  </header>
+
+  <h1>How satisfied are you with our service?</h1>
+  <div class="rating-container">
+    <div class="rating-item" onclick="setRating('😃')">😃</div>
+    <div class="rating-item" onclick="setRating('😊')">😊</div>
+    <div class="rating-item" onclick="setRating('😐')">😐</div>
+    <div class="rating-item" onclick="setRating('😕')">😕</div>
+    <div class="rating-item" onclick="setRating('😞')">😞</div>
+  </div>
+  <button onclick="submitRating()">Submit Rating</button>
+  <p id="feedback-message" style="display: none; margin-top: 20px;"></p>
+
+  <script>
+    let selectedRating = '';
+
+    function setRating(rating) {
+      selectedRating = rating;
+      const ratingItems = document.querySelectorAll('.rating-item');
+      ratingItems.forEach(item => {
+        if (item.textContent === rating) {
+          item.classList.add('selected');
+        } else {
+          item.classList.remove('selected');
+        }
+      });
+    }
+
+    function submitRating() {
+      if (!selectedRating) {
+        alert('Please select a rating!');
+        return;
+      }
+      console.log("User rated the service as: " + selectedRating);
+      document.getElementById('feedback-message').innerText = "Thank you for your feedback!";
+      document.getElementById('feedback-message').style.display = "block";
+      // You can perform further actions here, such as sending the rating to the server
+    }
+  </script>
+</body>
+</html>

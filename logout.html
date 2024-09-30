@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      background-image: url('https://www.freepngimg.com/thumb/coffee/68495-coffee-instant-tea-drink-mug-design-coffeemaker.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .logout-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .logout-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-container">
+    <h1>Are you sure you want to logout?</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    function logout() {
+      // Here you can add code to perform logout actions, like clearing session storage, cookies, etc.
+      // For example, clearing session storage:
+      sessionStorage.clear();
+
+      // Redirect to the signup page after logout
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
